@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "country": "Nigeria",
+    "city": "Maitama",
+    "state": "Abuja",
+    "address": "123 Colorado Blvd",
+    "postalCode": "91105",
+    "coordinates": "POINT(9.095113 7.490993)"
+  },
+  {
+    "id": 2,
+    "country": "Nigeria",
+    "city": "Gwarimpa",
+    "state": "Abuja",
+    "address": "456 Ocean Ave",
+    "postalCode": "90401",
+    "coordinates": "POINT(9.106233 7.406532)"
+  },
+  {
+    "id": 3,
+    "country": "Nigeria",
+    "city": "Ikoyi",
+    "state": "Lagos",
+    "address": "789 Hollywood Way",
+    "postalCode": "91505",
+    "coordinates": "POINT(6.452595 3.424082)"
+  },
+  {
+    "id": 4,
+    "country": "Nigeria",
+    "city": "Ikeja",
+    "state": "Lagos",
+    "address": "101 Pine Ave",
+    "postalCode": "90802",
+    "coordinates": "POINT(6.59231 3.336705)"
+  },
+  {
+    "id": 5,
+    "country": "Nigeria",
+    "city": "Vicoria Island",
+    "state": "Lagos",
+    "address": "555 Manhattan Ave",
+    "postalCode": "10001",
+    "coordinates": "POINT(6.424756° 3.425089°)"
+  },
+  {
+    "id": 6,
+    "country": "Nigeria",
+    "city": "Wuse",
+    "state": "Abuja",
+    "address": "888 Malibu Road",
+    "postalCode": "90265",
+    "coordinates": "POINT(9.076603 7.472444)"
+  },
+  {
+    "id": 7,
+    "country": "Nigeria",
+    "city": "Ajah",
+    "state": "Lagos",
+    "address": "777 Brand Blvd",
+    "postalCode": "91203",
+    "coordinates": "POINT(6.410154 3.414891)"
+  },
+  {
+    "id": 8,
+    "country": "Nigeria",
+    "city": "Asokoro",
+    "state": "Abuja",
+    "address": "555 Torrance Blvd",
+    "postalCode": "90503",
+    "coordinates": "POINT(9.043716 7.518476°)"
+  },
+  {
+    "id": 9,
+    "country": "Nigeria",
+    "city": "Garki",
+    "state": "Abuja",
+    "address": "1234 Ocean Dr",
+    "postalCode": "33139",
+    "coordinates": "POINT(9.035579 7.48068)"
+  },
+  {
+    "id": 10,
+    "country": "Nigeria",
+    "city": "Life Camp",
+    "state": "Abuja",
+    "address": "789 Rodeo Dr",
+    "postalCode": "90210",
+    "coordinates": "POINT(9.068636° 7.44261)"
+  }
+]
