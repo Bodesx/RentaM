@@ -30,8 +30,8 @@ const PropertyDetails = ({ propertyId }: PropertyDetailsProps) => {
                 key={amenity}
                 className="flex flex-col items-center border rounded-xl py-8 px-4"
               >
-                <Icon className="w-8 h-8 mb-2 text-gray-700" />
-                <span className="text-sm text-center text-gray-700">
+                <Icon className="w-8 h-8 mb-2 " />
+                <span className="text-sm text-center ">
                   {formatEnumString(amenity)}
                 </span>
               </div>
@@ -82,20 +82,20 @@ const PropertyDetails = ({ propertyId }: PropertyDetailsProps) => {
           <TabsContent value="required-fees" className="w-1/3">
             <p className="font-semibold mt-5 mb-2">One time move in fees</p>
             <hr />
-            <div className="flex justify-between py-2 bg-secondary-50">
-              <span className="text-primary-700 font-medium">
+            <div className="flex justify-between py-2">
+              <span className=" font-medium">
                 Application Fee
               </span>
-              <span className="text-primary-700">
+              <span className="">
                 ${property.applicationFee}
               </span>
             </div>
             <hr />
-            <div className="flex justify-between py-2 bg-secondary-50">
-              <span className="text-primary-700 font-medium">
+            <div className="flex justify-between py-2 ">
+              <span className=" font-medium">
                 Security Deposit
               </span>
-              <span className="text-primary-700">
+              <span className="">
                 ${property.securityDeposit}
               </span>
             </div>

@@ -18,16 +18,16 @@ const PropertyOverview = ({ propertyId }: PropertyOverviewProps) => {
     <div>
       {/* Header */}
       <div className="mb-4">
-        <div className="text-sm text-gray-500 mb-1">
+        <div className="text-sm  mb-1">
           {property.location?.country} / {property.location?.state} /{" "}
-          <span className="font-semibold text-gray-600">
+          <span className="font-semibold ">
             {property.location?.city}
           </span>
         </div>
         <h1 className="text-3xl font-bold my-5">{property.name}</h1>
         <div className="flex justify-between items-center">
-          <span className="flex items-center text-gray-500">
-            <MapPin className="w-4 h-4 mr-1 text-gray-700" />
+          <span className="flex items-center ">
+            <MapPin className="w-4 h-4 mr-1 " />
             {property.location?.city}, {property.location?.state},{" "}
             {property.location?.country}
           </span>
@@ -46,24 +46,24 @@ const PropertyOverview = ({ propertyId }: PropertyOverviewProps) => {
       <div className="border border-primary-200 rounded-xl p-6 mb-6">
         <div className="flex justify-between items-center gap-4 px-5">
           <div>
-            <div className="text-sm text-gray-500">Monthly Rent</div>
+            <div className="text-sm ">Monthly Rent</div>
             <div className="font-semibold">
               ${property.pricePerMonth.toLocaleString()}
             </div>
           </div>
           <div className="border-l border-gray-300 h-10"></div>
           <div>
-            <div className="text-sm text-gray-500">Bedrooms</div>
+            <div className="text-sm ">Bedrooms</div>
             <div className="font-semibold">{property.beds} bd</div>
           </div>
           <div className="border-l border-gray-300 h-10"></div>
           <div>
-            <div className="text-sm text-gray-500">Bathrooms</div>
-            <div className="font-semibold">{property.baths} ba</div>
+            <div className="text-sm ">Bathrooms</div>
+            <div className="font-semibold">{property.baths} bath</div>
           </div>
           <div className="border-l border-gray-300 h-10"></div>
           <div>
-            <div className="text-sm text-gray-500">Square Feet</div>
+            <div className="text-sm ">Square Feet</div>
             <div className="font-semibold">
               {property.squareFeet.toLocaleString()} sq ft
             </div>
@@ -74,7 +74,7 @@ const PropertyOverview = ({ propertyId }: PropertyOverviewProps) => {
       {/* Summary */}
       <div className="my-16">
         <h2 className="text-xl font-semibold mb-5">About {property.name}</h2>
-        <p className="text-gray-500 leading-7">
+        <p className=" leading-7">
           {property.description}
           Experience resort style luxury living at Seacrest Homes, where the
           ocean and city are seamlessly intertwined. Our newly built community

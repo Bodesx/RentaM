@@ -15,8 +15,7 @@ body,
   height: 100%;
   width: 100%;
   @apply text-sm;
-  @apply bg-white;
-  @apply dark:bg-black;
+  
 }
 
 @layer base {
@@ -24,6 +23,7 @@ body,
     --background: 0 0% 98%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
+    --backdrop-filter: blur(20px);
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -164,86 +164,3 @@ body,
   }
 }
 
-/* Amplify UI Overrides */
-[data-amplify-authenticator] {
-  --amplify-components-button-primary-background-color: var(--primary);
-  --amplify-components-button-primary-hover-background-color: hsl(
-    var(--primary) / 0.9
-  );
-  --amplify-components-button-border-radius: var(--radius);
-  --amplify-components-fieldcontrol-border-radius: var(--radius);
-}
-
-[data-amplify-authenticator][data-variation="default"] {
-  height: 100%;
-  padding: 2rem !important;
-}
-
-[data-amplify-authenticator] [data-amplify-router] {
-  border: none !important;
-  box-shadow: none !important;
-  max-width: 400px !important;
-  margin: 0 auto;
-}
-
-[data-amplify-authenticator] [data-amplify-container] {
-  border-radius: var(--radius);
-  padding: 2rem !important;
-  border: 1px solid hsl(var(--border));
-}
-
-[data-amplify-authenticator] [data-amplify-form] {
-  padding: 0 !important;
-}
-
-[data-amplify-authenticator] .amplify-tabs__list {
-  display: none;
-}
-
-[data-amplify-authenticator] .amplify-button--primary {
-  width: 100%;
-  height: 2.75rem;
-  margin-top: 1rem;
-  background-color: hsl(var(--primary)) !important;
-  color: hsl(var(--primary-foreground)) !important;
-  @apply font-medium;
-  @apply text-sm;
-}
-
-[data-amplify-authenticator] .amplify-button--primary:hover {
-  background-color: hsl(var(--primary) / 0.8) !important;
-}
-
-[data-amplify-authenticator] .amplify-field-group__control {
-  border-color: hsl(var(--input));
-}
-
-[data-amplify-authenticator] .amplify-field-group__control:focus-within {
-  border-color: hsl(var(--ring)) !important;
-  box-shadow: 0 0 0 1px hsl(var(--ring)) !important;
-}
-
-[data-amplify-authenticator] .amplify-field__show-password {
-  color: hsl(var(--muted-foreground));
-}
-
-[data-amplify-authenticator] .amplify-label {
-  @apply text-sm font-medium;
-  color: hsl(var(--foreground));
-}
-
-[data-amplify-authenticator] .amplify-select {
-  border-color: hsl(var(--input));
-  border-radius: var(--radius);
-  height: 2.5rem;
-  @apply text-sm;
-}
-
-[data-amplify-authenticator] .amplify-text--error {
-  color: #ff0000;
-}
-
-/* Sonner Toast Styles */
-[data-close-button="true"] {
-  @apply bg-background border-border text-foreground hover:bg-muted;
-}

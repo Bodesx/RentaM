@@ -104,8 +104,8 @@ const FiltersBar = () => {
         <Button
           variant="outline"
           className={cn(
-            "gap-2 rounded-xl border-primary-400 hover:bg-primary-500 hover:text-primary-100",
-            isFiltersFullOpen && "bg-primary-700 text-primary-100"
+            "gap-2 rounded-xl border-primary-400 hover:bg-secondary-500 hover:text-primary-100",
+            isFiltersFullOpen && " "
           )}
           onClick={() => dispatch(toggleFiltersFullOpen())}
         >
@@ -124,7 +124,7 @@ const FiltersBar = () => {
           <Button
             onClick={handleLocationSearch}
             className={`rounded-r-xl rounded-l-none border-l-none border-primary-400 shadow-none 
-              border hover:bg-primary-700 hover:text-primary-50`}
+              border hover:bg-secondary-700 hover:text-primary-50`}
           >
             <Search className="w-4 h-4" />
           </Button>
@@ -139,12 +139,12 @@ const FiltersBar = () => {
               handleFilterChange("priceRange", value, true)
             }
           >
-            <SelectTrigger className="w-22 rounded-xl border-primary-400">
+            <SelectTrigger className="w-22 rounded-xl border">
               <SelectValue>
                 {formatPriceValue(filters.priceRange[0], true)}
               </SelectValue>
             </SelectTrigger>
-            <SelectContent className="bg-white">
+            <SelectContent className="">
               <SelectItem value="any">Any Min Price</SelectItem>
               {[500, 1000, 1500, 2000, 3000, 5000, 10000].map((price) => (
                 <SelectItem key={price} value={price.toString()}>
@@ -161,12 +161,12 @@ const FiltersBar = () => {
               handleFilterChange("priceRange", value, false)
             }
           >
-            <SelectTrigger className="w-22 rounded-xl border-primary-400">
+            <SelectTrigger className="w-22 rounded-xl border">
               <SelectValue>
                 {formatPriceValue(filters.priceRange[1], false)}
               </SelectValue>
             </SelectTrigger>
-            <SelectContent className="bg-white">
+            <SelectContent className="">
               <SelectItem value="any">Any Max Price</SelectItem>
               {[1000, 2000, 3000, 5000, 10000].map((price) => (
                 <SelectItem key={price} value={price.toString()}>
@@ -187,7 +187,7 @@ const FiltersBar = () => {
             <SelectTrigger className="w-26 rounded-xl border-primary-400">
               <SelectValue placeholder="Beds" />
             </SelectTrigger>
-            <SelectContent className="bg-white">
+            <SelectContent className="">
               <SelectItem value="any">Any Beds</SelectItem>
               <SelectItem value="1">1+ bed</SelectItem>
               <SelectItem value="2">2+ beds</SelectItem>
@@ -204,7 +204,7 @@ const FiltersBar = () => {
             <SelectTrigger className="w-26 rounded-xl border-primary-400">
               <SelectValue placeholder="Baths" />
             </SelectTrigger>
-            <SelectContent className="bg-white">
+            <SelectContent className="">
               <SelectItem value="any">Any Baths</SelectItem>
               <SelectItem value="1">1+ bath</SelectItem>
               <SelectItem value="2">2+ baths</SelectItem>
@@ -223,7 +223,7 @@ const FiltersBar = () => {
           <SelectTrigger className="w-32 rounded-xl border-primary-400">
             <SelectValue placeholder="Home Type" />
           </SelectTrigger>
-          <SelectContent className="bg-white">
+          <SelectContent className="">
             <SelectItem value="any">Any Property Type</SelectItem>
             {Object.entries(PropertyTypeIcons).map(([type, Icon]) => (
               <SelectItem key={type} value={type}>
@@ -243,7 +243,7 @@ const FiltersBar = () => {
           <Button
             variant="ghost"
             className={cn(
-              "px-3 py-1 rounded-none rounded-l-xl hover:bg-primary-600 hover:text-primary-50",
+              "px-3 py-1 rounded-none rounded-l-xl hover:bg-secondary-400 hover:text-secondary-500",
               viewMode === "list" ? "bg-primary-700 text-primary-50" : ""
             )}
             onClick={() => dispatch(setViewMode("list"))}
@@ -253,7 +253,7 @@ const FiltersBar = () => {
           <Button
             variant="ghost"
             className={cn(
-              "px-3 py-1 rounded-none rounded-r-xl hover:bg-primary-600 hover:text-primary-50",
+              "px-3 py-1 rounded-none rounded-r-xl hover:bg-secondary-400 hover:text-primary-50",
               viewMode === "grid" ? "bg-primary-700 text-primary-50" : ""
             )}
             onClick={() => dispatch(setViewMode("grid"))}

@@ -17,21 +17,21 @@ const ContactWidget = ({ onOpenModal }: ContactWidgetProps) => {
   };
 
   return (
-    <div className="bg-white border border-primary-200 rounded-2xl p-7 h-fit min-w-[300px]">
+    <div className=" border border-primary-200 rounded-2xl p-7 h-fit min-w-[300px]">
       {/* Contact Property */}
       <div className="flex items-center gap-5 mb-4 border border-primary-200 p-4 rounded-xl">
-        <div className="flex items-center p-4 bg-primary-900 rounded-full">
+        <div className="flex items-center p-4  rounded-full">
           <Phone className="text-primary-50" size={15} />
         </div>
         <div>
           <p>Contact This Property</p>
-          <div className="text-lg font-bold text-primary-800">
+          <div className="text-lg font-bold ">
             (424) 340-5574
           </div>
         </div>
       </div>
       <Button
-        className="w-full bg-primary-700 text-white hover:bg-primary-600"
+        className="w-full   hover:bg-primary-600"
         onClick={handleButtonClick}
       >
         {authUser ? "Submit Application" : "Sign In to Apply"}

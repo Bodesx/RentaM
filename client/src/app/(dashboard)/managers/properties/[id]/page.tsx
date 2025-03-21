@@ -63,18 +63,18 @@ const PropertyTenants = () => {
       />
 
       <div className="w-full space-y-6">
-        <div className="mt-8 bg-white rounded-xl shadow-md overflow-hidden p-6">
+        <div className="mt-8  rounded-xl shadow-md overflow-hidden p-6">
           <div className="flex justify-between items-center mb-4">
             <div>
               <h2 className="text-2xl font-bold mb-1">Tenants Overview</h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm ">
                 Manage and view all tenants for this property.
               </p>
             </div>
             <div>
               <button
-                className={`bg-white border border-gray-300 text-gray-700 py-2
-              px-4 rounded-md flex items-center justify-center hover:bg-primary-700 hover:text-primary-50`}
+                className={` border border-gray-300 text-gray-700 py-2
+              px-4 rounded-md flex items-center justify-center hover:bg-primary-700 hover:`}
               >
                 <Download className="w-5 h-5 mr-2" />
                 <span>Download All</span>
@@ -110,7 +110,7 @@ const PropertyTenants = () => {
                           <div className="font-semibold">
                             {lease.tenant.name}
                           </div>
-                          <div className="text-sm text-gray-500">
+                          <div className="text-sm ">
                             {lease.tenant.email}
                           </div>
                         </div>
@@ -140,8 +140,8 @@ const PropertyTenants = () => {
                     <TableCell>{lease.tenant.phoneNumber}</TableCell>
                     <TableCell>
                       <button
-                        className={`border border-gray-300 text-gray-700 py-2 px-4 rounded-md flex 
-                      items-center justify-center font-semibold hover:bg-primary-700 hover:text-primary-50`}
+                        className={`border border-gray-300  py-2 px-4 rounded-md flex 
+                      items-center justify-center font-semibold hover:bg-primary-700 hover:`}
                       >
                         <ArrowDownToLine className="w-4 h-4 mr-1" />
                         Download Agreement

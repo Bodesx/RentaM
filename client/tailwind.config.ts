@@ -10,6 +10,15 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		animation: {
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+      },
+	    keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        },
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -21,6 +30,7 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
+	   
   			primary: {
   				'50': '#fcfcfc',
   				'100': '#f1f1f2',
@@ -41,7 +51,7 @@ const config: Config = {
   				'300': '#F6DAC9FF',
   				'400': '#F1BEABFF',
   				'500': '#EBAD86FF',
-  				'600': '#E4865AFF',
+  				'600': '#C5511BFF',
   				'700': '#DC5228FF',
   				'800': '#7C3A14FF',
   				'900': '#401F0AFF',
@@ -79,6 +89,10 @@ const config: Config = {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			}
+			
+			
+
+
   		}
   	}
   },

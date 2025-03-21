@@ -57,7 +57,7 @@ const Listings = () => {
     <div className="w-full">
       <h3 className="text-sm px-4 font-bold">
         {properties.length}{" "}
-        <span className="text-gray-700 font-normal">
+        <span className=" font-normal">
           Places in {filters.location}
         </span>
       </h3>

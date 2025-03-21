@@ -19,7 +19,7 @@ const PropertyLocation = ({ propertyId }: PropertyDetailsProps) => {
 
     const map = new mapboxgl.Map({
       container: mapContainerRef.current!,
-      style: "mapbox://styles/majesticglue/cm6u301pq008b01sl7yk1cnvb",
+      style: "mapbox://styles/bodesx/cm8e6zhue00sw01qz3zzkh549",
       center: [
         property.location.coordinates.longitude,
         property.location.coordinates.latitude,
@@ -51,11 +51,11 @@ const PropertyLocation = ({ propertyId }: PropertyDetailsProps) => {
       <h3 className="text-xl font-semibold text-primary-800 dark:text-primary-100">
         Map and Location
       </h3>
-      <div className="flex justify-between items-center text-sm text-primary-500 mt-2">
-        <div className="flex items-center text-gray-500">
-          <MapPin className="w-4 h-4 mr-1 text-gray-700" />
+      <div className="flex justify-between items-center text-sm  mt-2">
+        <div className="flex items-center ">
+          <MapPin className="w-4 h-4 mr-1 " />
           Property Address:
-          <span className="ml-2 font-semibold text-gray-700">
+          <span className="ml-2 font-semibold ">
             {property.location?.address || "Address not available"}
           </span>
         </div>

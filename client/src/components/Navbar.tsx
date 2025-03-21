@@ -18,6 +18,7 @@ import {
 } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { SidebarTrigger } from "./ui/sidebar";
+import ModeToggle from "./ui/theme-toggle";
 
 const Navbar = () => {
   const { data: authUser } = useGetAuthUserQuery();
@@ -53,14 +54,14 @@ const Navbar = () => {
               <Image
                 src="/logo.svg"
                 alt="Rentiful Logo"
-                width={24}
-                height={24}
-                className="w-6 h-6"
+                width={29}
+                height={29}
+                className="w-10 h-10"
               />
               <div className="text-xl font-bold">
                 RENT
                 <span className="text-secondary-500 font-light hover:!text-primary-300">
-                  <b>A</b>
+                  <b>AM</b>
                 </span>
               </div>
             </div>
@@ -93,20 +94,22 @@ const Navbar = () => {
             </Button>
           )}
         </div>
+        
         {!isDashboardPage && (
           <p className="text-primary-200 hidden md:block">
             Discover your perfect rental apartment with our advanced search
           </p>
+          
         )}
         <div className="flex items-center gap-5">
           {authUser ? (
-            <>
+            <> <ModeToggle />
               <div className="relative hidden md:block">
-                <MessageCircle className="w-6 h-6 cursor-pointer text-primary-200 hover:text-primary-400" />
+                <MessageCircle className="w-6 h-6 cursor-pointer " />
                 <span className="absolute top-0 right-0 w-2 h-2 bg-secondary-700 rounded-full"></span>
               </div>
               <div className="relative hidden md:block">
-                <Bell className="w-6 h-6 cursor-pointer text-primary-200 hover:text-primary-400" />
+                <Bell className="w-6 h-6 cursor-pointer" />
                 <span className="absolute top-0 right-0 w-2 h-2 bg-secondary-700 rounded-full"></span>
               </div>
 
@@ -122,7 +125,7 @@ const Navbar = () => {
                     {authUser.userInfo?.name}
                   </p>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white text-primary-700">
+                <DropdownMenuContent className=" ">
                   <DropdownMenuItem
                     className="cursor-pointer hover:!bg-primary-700 hover:!text-primary-100 font-bold"
                     onClick={() =>

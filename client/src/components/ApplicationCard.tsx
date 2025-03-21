@@ -22,7 +22,7 @@ const ApplicationCard = ({
     userType === "manager" ? application.tenant : application.manager;
 
   return (
-    <div className="border rounded-xl overflow-hidden shadow-sm bg-white mb-4">
+    <div className="border rounded-xl overflow-hidden shadow-sm  mb-4">
       <div className="flex flex-col lg:flex-row  items-start lg:items-center justify-between px-6 md:px-4 py-6 gap-6 lg:gap-4">
         {/* Property Info Section */}
         <div className="flex flex-col lg:flex-row gap-5 w-full lg:w-auto">
@@ -59,9 +59,9 @@ const ApplicationCard = ({
         <div className="flex flex-col justify-between w-full lg:basis-2/12 lg:h-48 py-2 gap-3 lg:gap-0">
           <div>
             <div className="flex justify-between items-center">
-              <span className="text-gray-500">Status:</span>
+              <span className="">Status:</span>
               <span
-                className={`px-2 py-1 ${statusColor} text-white rounded-full text-sm`}
+                className={`px-2 py-1 ${statusColor}  rounded-full text-sm`}
               >
                 {application.status}
               </span>
@@ -69,15 +69,15 @@ const ApplicationCard = ({
             <hr className="mt-3" />
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">Start Date:</span>{" "}
+            <span className="">Start Date:</span>{" "}
             {new Date(application.lease?.startDate).toLocaleDateString()}
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">End Date:</span>{" "}
+            <span className="">End Date:</span>{" "}
             {new Date(application.lease?.endDate).toLocaleDateString()}
           </div>
           <div className="flex justify-between">
-            <span className="text-gray-500">Next Payment:</span>{" "}
+            <span className="">Next Payment:</span>{" "}
             {new Date(application.lease?.nextPaymentDate).toLocaleDateString()}
           </div>
         </div>
@@ -105,11 +105,11 @@ const ApplicationCard = ({
             </div>
             <div className="flex flex-col gap-2">
               <div className="font-semibold">{contactPerson.name}</div>
-              <div className="text-sm flex items-center text-primary-600">
+              <div className="text-sm flex items-center ">
                 <PhoneCall className="w-5 h-5 mr-2" />
                 {contactPerson.phoneNumber}
               </div>
-              <div className="text-sm flex items-center text-primary-600">
+              <div className="text-sm flex items-center ">
                 <Mail className="w-5 h-5 mr-2" />
                 {contactPerson.email}
               </div>

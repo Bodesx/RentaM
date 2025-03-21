@@ -88,7 +88,7 @@ const FiltersFull = () => {
   if (!isFiltersFullOpen) return null;
 
   return (
-    <div className="bg-white rounded-lg px-4 h-full overflow-auto pb-10">
+    <div className=" rounded-lg px-4 h-full overflow-auto pb-10">
       <div className="flex flex-col space-y-6">
         {/* Location */}
         <div>
@@ -107,7 +107,7 @@ const FiltersFull = () => {
             />
             <Button
               onClick={handleLocationSearch}
-              className="rounded-r-xl rounded-l-none border-l-none border-black shadow-none border hover:bg-primary-700 hover:text-primary-50"
+              className="rounded-r-xl rounded-l-none border-l-none  shadow-none border hover: hover:"
             >
               <Search className="w-4 h-4" />
             </Button>
@@ -225,7 +225,7 @@ const FiltersFull = () => {
                 squareFeet: value as [number, number],
               }))
             }
-            className="[&>.bar]:bg-primary-700"
+            className="[&>.bar]"
           />
           <div className="flex justify-between mt-2">
             <span>{localFilters.squareFeet[0] ?? 0} sq ft</span>
@@ -281,7 +281,7 @@ const FiltersFull = () => {
         <div className="flex gap-4 mt-6">
           <Button
             onClick={handleSubmit}
-            className="flex-1 bg-primary-700 text-white rounded-xl"
+            className="flex-1   rounded-xl"
           >
             APPLY
           </Button>

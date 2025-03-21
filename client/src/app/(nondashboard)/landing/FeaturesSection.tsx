@@ -29,7 +29,7 @@ const FeaturesSection = () => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className="py-24 px-6 sm:px-8 lg:px-12 xl:px-16 bg-white"
+      className="py-24 px-6 sm:px-8 lg:px-12 xl:px-16 "
     >
       <div className="max-w-4xl xl:max-w-6xl mx-auto">
         <motion.h2
@@ -95,7 +95,7 @@ const FeatureCard = ({
     <p className="mb-4">{description}</p>
     <Link
       href={linkHref}
-      className="inline-block border border-gray-300 rounded px-4 py-2 hover:bg-gray-100"
+      className="inline-block border rounded px-4 py-2 hover:"
       scroll={false}
     >
       {linkText}

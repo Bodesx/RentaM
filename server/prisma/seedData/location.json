@@ -4,89 +4,90 @@
     "country": "Nigeria",
     "city": "Maitama",
     "state": "Abuja",
-    "address": "123 Colorado Blvd",
-    "postalCode": "91105",
-    "coordinates": "POINT(9.095113 7.490993)"
+    "address": "Plot 1234, Shehu Shagari Way",
+    "postalCode": "900271",
+    "coordinates": "POINT(7.5046 9.0846)"
   },
   {
     "id": 2,
     "country": "Nigeria",
     "city": "Gwarimpa",
     "state": "Abuja",
-    "address": "456 Ocean Ave",
-    "postalCode": "90401",
-    "coordinates": "POINT(9.106233 7.406532)"
+    "address": "No. 56, 3rd Avenue",
+    "postalCode": "900108",
+    "coordinates": "POINT(7.4474 9.0895)"
   },
   {
     "id": 3,
     "country": "Nigeria",
     "city": "Ikoyi",
     "state": "Lagos",
-    "address": "789 Hollywood Way",
-    "postalCode": "91505",
-    "coordinates": "POINT(6.452595 3.424082)"
+    "address": "15, Gerrard Road",
+    "postalCode": "101233",
+    "coordinates": "POINT(3.4219 6.4483)"
   },
   {
     "id": 4,
     "country": "Nigeria",
     "city": "Ikeja",
     "state": "Lagos",
-    "address": "101 Pine Ave",
-    "postalCode": "90802",
-    "coordinates": "POINT(6.59231 3.336705)"
+    "address": "22, Obafemi Awolowo Way",
+    "postalCode": "100271",
+    "coordinates": "POINT(3.3430 6.5965)"
   },
   {
     "id": 5,
     "country": "Nigeria",
-    "city": "Vicoria Island",
+    "city": "Victoria Island",
     "state": "Lagos",
-    "address": "555 Manhattan Ave",
-    "postalCode": "10001",
-    "coordinates": "POINT(6.424756° 3.425089°)"
+    "address": "Plot 1415, Adetokunbo Ademola Street",
+    "postalCode": "101241",
+    "coordinates": "POINT(3.4210 3.4210 )"
   },
   {
     "id": 6,
     "country": "Nigeria",
     "city": "Wuse",
     "state": "Abuja",
-    "address": "888 Malibu Road",
-    "postalCode": "90265",
-    "coordinates": "POINT(9.076603 7.472444)"
+    "address": "Plot 1025, Herbert Macaulay Way",
+    "postalCode": "900288",
+    "coordinates": "POINT(7.4891 9.0579)"
   },
   {
     "id": 7,
     "country": "Nigeria",
     "city": "Ajah",
     "state": "Lagos",
-    "address": "777 Brand Blvd",
-    "postalCode": "91203",
-    "coordinates": "POINT(6.410154 3.414891)"
+    "address": "Km 22, Lekki-Epe Expressway",
+    "postalCode": "101245",
+    "coordinates": "POINT(3.5965 6.4673 )"
   },
   {
     "id": 8,
     "country": "Nigeria",
     "city": "Asokoro",
     "state": "Abuja",
-    "address": "555 Torrance Blvd",
-    "postalCode": "90503",
-    "coordinates": "POINT(9.043716 7.518476°)"
+    "address": "No. 8, Yakubu Gowon Crescent",
+    "postalCode": "900231",
+    "coordinates": "POINT(7.5238 9.0360 )"
   },
   {
     "id": 9,
     "country": "Nigeria",
     "city": "Garki",
     "state": "Abuja",
-    "address": "1234 Ocean Dr",
-    "postalCode": "33139",
-    "coordinates": "POINT(9.035579 7.48068)"
+    "address": "Plot 743, Ahmadu Bello Way",
+    "postalCode": "900241",
+    "coordinates": "POINT(7.4896 9.0306)"
   },
   {
     "id": 10,
     "country": "Nigeria",
     "city": "Life Camp",
     "state": "Abuja",
-    "address": "789 Rodeo Dr",
-    "postalCode": "90210",
-    "coordinates": "POINT(9.068636° 7.44261)"
+    "address": "No. 12, Godab Estate Road",
+    "postalCode": "900108",
+    "coordinates": "POINT(7.4351 9.1056)"
   }
 ]
+

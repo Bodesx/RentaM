@@ -35,11 +35,11 @@ const SettingsForm = ({
         <h1 className="text-xl font-semibold">
           {`${userType.charAt(0).toUpperCase() + userType.slice(1)} Settings`}
         </h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <p className="text-sm  mt-1">
           Manage your account preferences and personal information
         </p>
       </div>
-      <div className="bg-white rounded-xl p-6">
+      <div className="rounded-xl p-6">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
@@ -62,14 +62,14 @@ const SettingsForm = ({
               <Button
                 type="button"
                 onClick={toggleEditMode}
-                className="bg-secondary-500 text-white hover:bg-secondary-600"
+                className="bg-secondary-500  hover:bg-secondary-600"
               >
                 {editMode ? "Cancel" : "Edit"}
               </Button>
               {editMode && (
                 <Button
                   type="submit"
-                  className="bg-primary-700 text-white hover:bg-primary-800"
+                  className="  hover:bg-secondary-800"
                 >
                   Save Changes
                 </Button>
