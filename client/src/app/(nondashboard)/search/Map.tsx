@@ -6,7 +6,7 @@ import { useAppSelector } from "@/state/redux";
 import { useGetPropertiesQuery } from "@/state/api";
 import { Property } from "@/types/prismaTypes";
 
-mapboxgl.accessToken = "pk.eyJ1IjoiYm9kZXN4IiwiYSI6ImNtOGYxMWZubTAyZzkyanNkbTBhb2tkODgifQ.tmkE_cFAm6QK4PmYH9XDkA"; 
+mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN as string; 
 
 const Map = () => {
   const mapContainerRef = useRef(null);
