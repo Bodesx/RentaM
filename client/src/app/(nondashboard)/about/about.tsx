@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import { ReactLenis } from 'lenis/react';
 import { JSX } from 'react';

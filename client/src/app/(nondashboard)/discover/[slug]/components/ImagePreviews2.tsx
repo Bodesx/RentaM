@@ -2,6 +2,7 @@
 
 import styles from "./styles/houseDetailsPage.module.css";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
@@ -10,11 +11,10 @@ import { featuredHomes } from "../../components/FeaturedHomes";
 import * as React from 'react';
 
 
-const ImagePreviews = ({ params }: { params: { slug: string } }) => {
+const ImagePreviews = () => {
   
-    // Unwrap the params promise using React.use()
-    const { slug } = React.use(params);
-
+    const params = useParams();
+    const slug = params.slug as string;
     const [selectedIndex, setSelectedIndex] = useState(0);
     const sliderRef = useRef<HTMLDivElement | null>(null);
     const slideValueResized = useRef<string | undefined>("0");

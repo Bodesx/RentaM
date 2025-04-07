@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+   eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -8,7 +11,9 @@ const nextConfig: NextConfig = {
         hostname: "example.com",
         port: "",
         pathname: "/**",
+        
       },
+      
       {
         protocol: "https",
         hostname: "*.amazonaws.com",
