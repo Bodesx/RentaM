@@ -56,13 +56,16 @@ const SearchPage = () => {
         >
           <FiltersFull />
         </div>
+       
         <Map />
-        <div className="basis-4/12 overflow-y-auto">
+       
+        <div className="w-full md:basis-4/12 overflow-y-auto max-h-[90vh] md:max-h-none  transition-all">
           <Listings />
         </div>
       </div>
     </div>
   );
 };
+
 
 export default SearchPage;

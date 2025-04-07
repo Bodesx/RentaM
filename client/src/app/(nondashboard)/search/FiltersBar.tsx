@@ -97,173 +97,159 @@ const FiltersBar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center w-full py-5">
-      {/* Filters */}
-      <div className="flex justify-between items-center gap-4 p-2">
-        {/* All Filters */}
+  <div className="flex flex-col md:flex-row md:justify-between w-full gap-4 py-4 px-2">
+    {/* Left - Filters Section */}
+    <div className="flex flex-wrap items-center gap-3">
+      {/* All Filters */}
+      <Button
+        variant="outline"
+        className={cn(
+          "gap-2 rounded-xl border-primary-400 hover:bg-secondary-500 hover:text-primary-100",
+          isFiltersFullOpen && ""
+        )}
+        onClick={() => dispatch(toggleFiltersFullOpen())}
+      >
+        <Filter className="w-4 h-4" />
+        <span>Filters</span>
+      </Button>
+
+      {/* Location Search */}
+      <div className="flex">
+        <Input
+          placeholder="Search location"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          className="w-28 sm:w-40 rounded-l-xl rounded-r-none border-primary-400 border-r-0"
+        />
         <Button
-          variant="outline"
-          className={cn(
-            "gap-2 rounded-xl border-primary-400 hover:bg-secondary-500 hover:text-primary-100",
-            isFiltersFullOpen && " "
-          )}
-          onClick={() => dispatch(toggleFiltersFullOpen())}
+          onClick={handleLocationSearch}
+          className="rounded-r-xl rounded-l-none border-l-none border-primary-400 shadow-none border hover:bg-secondary-700 hover:text-primary-50"
         >
-          <Filter className="w-4 h-4" />
-          <span>All Filters</span>
+          <Search className="w-4 h-4" />
         </Button>
+      </div>
 
-        {/* Search Location */}
-        <div className="flex items-center">
-          <Input
-            placeholder="Search location"
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            className="w-40 rounded-l-xl rounded-r-none border-primary-400 border-r-0"
-          />
-          <Button
-            onClick={handleLocationSearch}
-            className={`rounded-r-xl rounded-l-none border-l-none border-primary-400 shadow-none 
-              border hover:bg-secondary-700 hover:text-primary-50`}
-          >
-            <Search className="w-4 h-4" />
-          </Button>
-        </div>
-
-        {/* Price Range */}
-        <div className="flex gap-1">
-          {/* Minimum Price Selector */}
-          <Select
-            value={filters.priceRange[0]?.toString() || "any"}
-            onValueChange={(value) =>
-              handleFilterChange("priceRange", value, true)
-            }
-          >
-            <SelectTrigger className="w-22 rounded-xl border">
-              <SelectValue>
-                {formatPriceValue(filters.priceRange[0], true)}
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent className="">
-              <SelectItem value="any">Any Min Price</SelectItem>
-              {[500, 1000, 1500, 2000, 3000, 5000, 10000].map((price) => (
-                <SelectItem key={price} value={price.toString()}>
-                  ${price / 1000}k+
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-
-          {/* Maximum Price Selector */}
-          <Select
-            value={filters.priceRange[1]?.toString() || "any"}
-            onValueChange={(value) =>
-              handleFilterChange("priceRange", value, false)
-            }
-          >
-            <SelectTrigger className="w-22 rounded-xl border">
-              <SelectValue>
-                {formatPriceValue(filters.priceRange[1], false)}
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent className="">
-              <SelectItem value="any">Any Max Price</SelectItem>
-              {[1000, 2000, 3000, 5000, 10000].map((price) => (
-                <SelectItem key={price} value={price.toString()}>
-                  &lt;${price / 1000}k
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-
-        {/* Beds and Baths */}
-        <div className="flex gap-1">
-          {/* Beds */}
-          <Select
-            value={filters.beds}
-            onValueChange={(value) => handleFilterChange("beds", value, null)}
-          >
-            <SelectTrigger className="w-26 rounded-xl border-primary-400">
-              <SelectValue placeholder="Beds" />
-            </SelectTrigger>
-            <SelectContent className="">
-              <SelectItem value="any">Any Beds</SelectItem>
-              <SelectItem value="1">1+ bed</SelectItem>
-              <SelectItem value="2">2+ beds</SelectItem>
-              <SelectItem value="3">3+ beds</SelectItem>
-              <SelectItem value="4">4+ beds</SelectItem>
-            </SelectContent>
-          </Select>
-
-          {/* Baths */}
-          <Select
-            value={filters.baths}
-            onValueChange={(value) => handleFilterChange("baths", value, null)}
-          >
-            <SelectTrigger className="w-26 rounded-xl border-primary-400">
-              <SelectValue placeholder="Baths" />
-            </SelectTrigger>
-            <SelectContent className="">
-              <SelectItem value="any">Any Baths</SelectItem>
-              <SelectItem value="1">1+ bath</SelectItem>
-              <SelectItem value="2">2+ baths</SelectItem>
-              <SelectItem value="3">3+ baths</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-
-        {/* Property Type */}
+      {/* Price Range */}
+      <div className="flex gap-1">
         <Select
-          value={filters.propertyType || "any"}
-          onValueChange={(value) =>
-            handleFilterChange("propertyType", value, null)
-          }
+          value={filters.priceRange[0]?.toString() || "any"}
+          onValueChange={(value) => handleFilterChange("priceRange", value, true)}
         >
-          <SelectTrigger className="w-32 rounded-xl border-primary-400">
-            <SelectValue placeholder="Home Type" />
+          <SelectTrigger className="w-24 rounded-xl border">
+            <SelectValue>{formatPriceValue(filters.priceRange[0], true)}</SelectValue>
           </SelectTrigger>
-          <SelectContent className="">
-            <SelectItem value="any">Any Property Type</SelectItem>
-            {Object.entries(PropertyTypeIcons).map(([type, Icon]) => (
-              <SelectItem key={type} value={type}>
-                <div className="flex items-center">
-                  <Icon className="w-4 h-4 mr-2" />
-                  <span>{type}</span>
-                </div>
+          <SelectContent>
+            <SelectItem value="any">Any Min</SelectItem>
+            {[500, 1000, 1500, 2000, 3000, 5000].map((price) => (
+              <SelectItem key={price} value={price.toString()}>
+                ${price / 1000}k+
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        <Select
+          value={filters.priceRange[1]?.toString() || "any"}
+          onValueChange={(value) => handleFilterChange("priceRange", value, false)}
+        >
+          <SelectTrigger className="w-24 rounded-xl border">
+            <SelectValue>{formatPriceValue(filters.priceRange[1], false)}</SelectValue>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="any">Any Max</SelectItem>
+            {[1000, 2000, 3000, 5000, 10000].map((price) => (
+              <SelectItem key={price} value={price.toString()}>
+                &lt;${price / 1000}k
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
       </div>
 
-      {/* View Mode */}
-      <div className="flex justify-between items-center gap-4 p-2">
-        <div className="flex border rounded-xl">
-          <Button
-            variant="ghost"
-            className={cn(
-              "px-3 py-1 rounded-none rounded-l-xl hover:bg-secondary-400 hover:text-secondary-500",
-              viewMode === "list" ? "bg-primary-700 text-primary-50" : ""
-            )}
-            onClick={() => dispatch(setViewMode("list"))}
-          >
-            <List className="w-5 h-5" />
-          </Button>
-          <Button
-            variant="ghost"
-            className={cn(
-              "px-3 py-1 rounded-none rounded-r-xl hover:bg-secondary-400 hover:text-primary-50",
-              viewMode === "grid" ? "bg-primary-700 text-primary-50" : ""
-            )}
-            onClick={() => dispatch(setViewMode("grid"))}
-          >
-            <Grid className="w-5 h-5" />
-          </Button>
-        </div>
+      {/* Beds & Baths */}
+      <div className="flex gap-1">
+        <Select
+          value={filters.beds}
+          onValueChange={(value) => handleFilterChange("beds", value, null)}
+        >
+          <SelectTrigger className="w-24 rounded-xl border-primary-400">
+            <SelectValue placeholder="Beds" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="any">Any Beds</SelectItem>
+            <SelectItem value="1">1+</SelectItem>
+            <SelectItem value="2">2+</SelectItem>
+            <SelectItem value="3">3+</SelectItem>
+            <SelectItem value="4">4+</SelectItem>
+          </SelectContent>
+        </Select>
+
+        <Select
+          value={filters.baths}
+          onValueChange={(value) => handleFilterChange("baths", value, null)}
+        >
+          <SelectTrigger className="w-24 rounded-xl border-primary-400">
+            <SelectValue placeholder="Baths" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="any">Any Baths</SelectItem>
+            <SelectItem value="1">1+</SelectItem>
+            <SelectItem value="2">2+</SelectItem>
+            <SelectItem value="3">3+</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Property Type */}
+      <Select
+        value={filters.propertyType || "any"}
+        onValueChange={(value) => handleFilterChange("propertyType", value, null)}
+      >
+        <SelectTrigger className="w-32 rounded-xl border-primary-400">
+          <SelectValue placeholder="Type" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="any">Any</SelectItem>
+          {Object.entries(PropertyTypeIcons).map(([type, Icon]) => (
+            <SelectItem key={type} value={type}>
+              <div className="flex items-center">
+                <Icon className="w-4 h-4 mr-2" />
+                {type}
+              </div>
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
+
+    {/* Right - View Mode */}
+    <div className="flex justify-end items-center gap-3">
+      <div className="flex border rounded-xl overflow-hidden">
+        <Button
+          variant="ghost"
+          className={cn(
+            "px-3 py-1 rounded-none rounded-l-xl hover:bg-secondary-400 hover:text-secondary-500",
+            viewMode === "list" && "bg-primary-700 text-primary-50"
+          )}
+          onClick={() => dispatch(setViewMode("list"))}
+        >
+          <List className="w-5 h-5" />
+        </Button>
+        <Button
+          variant="ghost"
+          className={cn(
+            "px-3 py-1 rounded-none rounded-r-xl hover:bg-secondary-400 hover:text-primary-50",
+            viewMode === "grid" && "bg-primary-700 text-primary-50"
+          )}
+          onClick={() => dispatch(setViewMode("grid"))}
+        >
+          <Grid className="w-5 h-5" />
+        </Button>
       </div>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default FiltersBar;

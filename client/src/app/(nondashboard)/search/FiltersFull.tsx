@@ -1,4 +1,4 @@
-import { FiltersState, initialState, setFilters } from "@/state";
+import { FiltersState, initialState, setFilters, setFiltersFullOpen, toggleFiltersFullOpen } from "@/state";
 import { useAppSelector } from "@/state/redux";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -7,7 +7,7 @@ import { debounce } from "lodash";
 import { cleanParams, cn, formatEnumString } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { AmenityIcons, PropertyTypeIcons } from "@/lib/constants";
 import { Slider } from "@/components/ui/slider";
 import {
@@ -18,6 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
+
 
 const FiltersFull = () => {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ const FiltersFull = () => {
   const handleSubmit = () => {
     dispatch(setFilters(localFilters));
     updateURL(localFilters);
+    dispatch(setFiltersFullOpen(false)); // Close on mobile after apply
   };
 
   const handleReset = () => {
@@ -85,10 +87,25 @@ const FiltersFull = () => {
     }
   };
 
-  if (!isFiltersFullOpen) return null;
-
   return (
-    <div className=" rounded-lg px-4 h-full overflow-auto pb-10">
+    <div
+      className={cn(
+        "fixed inset-0 z-50  p-4 overflow-y-auto transition-transform duration-300 ease-in-out sm:static sm:inset-auto sm:z-auto sm:bg-transparent sm:p-0 sm:overflow-visible sm:w-[25vw] bg-gray-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-60 border border-gray-100",
+        isFiltersFullOpen ? "translate-x-0" : "-translate-x-full sm:translate-x-0"
+      )}
+    >
+      {/* Mobile Close Button */}
+      <div className="sm:hidden flex justify-end mb-4">
+        <Button
+          size="icon"
+          variant="ghost"
+          onClick={() => dispatch(setFiltersFullOpen(false))}
+
+        >
+          <X className="w-5 h-5" />
+        </Button>
+      </div>
+
       <div className="flex flex-col space-y-6">
         {/* Location */}
         <div>
@@ -107,7 +124,7 @@ const FiltersFull = () => {
             />
             <Button
               onClick={handleLocationSearch}
-              className="rounded-r-xl rounded-l-none border-l-none  shadow-none border hover: hover:"
+              className="rounded-r-xl rounded-l-none"
             >
               <Search className="w-4 h-4" />
             </Button>
@@ -225,7 +242,6 @@ const FiltersFull = () => {
                 squareFeet: value as [number, number],
               }))
             }
-            className="[&>.bar]"
           />
           <div className="flex justify-between mt-2">
             <span>{localFilters.squareFeet[0] ?? 0} sq ft</span>
@@ -241,17 +257,15 @@ const FiltersFull = () => {
               <div
                 key={amenity}
                 className={cn(
-                  "flex items-center space-x-2 p-2 border rounded-lg hover:cursor-pointer",
+                  "flex items-center space-x-2 p-2 border rounded-lg cursor-pointer",
                   localFilters.amenities.includes(amenity as AmenityEnum)
                     ? "border-black"
                     : "border-gray-200"
                 )}
                 onClick={() => handleAmenityChange(amenity as AmenityEnum)}
               >
-                <Icon className="w-5 h-5 hover:cursor-pointer" />
-                <Label className="hover:cursor-pointer">
-                  {formatEnumString(amenity)}
-                </Label>
+                <Icon className="w-5 h-5" />
+                <Label>{formatEnumString(amenity)}</Label>
               </div>
             ))}
           </div>
@@ -279,10 +293,7 @@ const FiltersFull = () => {
 
         {/* Apply and Reset buttons */}
         <div className="flex gap-4 mt-6">
-          <Button
-            onClick={handleSubmit}
-            className="flex-1   rounded-xl"
-          >
+          <Button onClick={handleSubmit} className="flex-1 rounded-xl">
             APPLY
           </Button>
           <Button
