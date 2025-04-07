@@ -47,14 +47,14 @@ const FeaturesSection = () => {
                   [
                     "Trustworthy and Verified Listings",
                     "Browse Rental Listings with Ease",
-                    "Simplify Your Rental Search with Advanced",
+                    "looking to buy a new house",
                   ][index]
                 }
                 description={
                   [
                     "Discover the best rental options with user reviews and ratings.",
                     "Get access to user reviews and ratings for a better understanding of rental options.",
-                    "Find trustworthy and verified rental listings to ensure a hassle-free experience.",
+                    "Find trustworthy and verified house for sale.",
                   ][index]
                 }
                 linkText={["Explore", "Search", "Discover"][index]}

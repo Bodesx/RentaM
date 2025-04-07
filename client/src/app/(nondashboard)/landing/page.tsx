@@ -4,7 +4,6 @@ import FeaturesSection from "./FeaturesSection";
 import DiscoverSection from "./DiscoverSection";
 import CallToActionSection from "./CallToActionSection";
 import FooterSection from "./FooterSection";
-import { HeroVideoDialog } from "@/components/ui/videohelp";
 import { HeroVideoDialogDemo } from "@/components/ui/videofaq";
 
 const Landing = () => {

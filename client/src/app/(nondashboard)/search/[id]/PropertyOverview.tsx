@@ -1,70 +1,64 @@
-import { useGetPropertyQuery } from "@/state/api";
-import { MapPin, Star } from "lucide-react";
-import React from "react";
+import { useGetPropertyQuery } from '@/state/api'
+import { MapPin, Star } from 'lucide-react'
+import React from 'react'
 
 const PropertyOverview = ({ propertyId }: PropertyOverviewProps) => {
-  const {
-    data: property,
-    isError,
-    isLoading,
-  } = useGetPropertyQuery(propertyId);
+  const { data: property, isError, isLoading } = useGetPropertyQuery(propertyId)
 
-  if (isLoading) return <>Loading...</>;
+  if (isLoading) return <>Loading...</>
   if (isError || !property) {
-    return <>Property not Found</>;
+    return <>Property not Found</>
   }
 
   return (
     <div>
       {/* Header */}
-      <div className="mb-4">
-        <div className="text-sm  mb-1">
-          {property.location?.country} / {property.location?.state} /{" "}
-          <span className="font-semibold ">
-            {property.location?.city}
-          </span>
+      <div className='mb-4'>
+        <div className='text-sm  mb-1'>
+          {property.location?.country} / {property.location?.state} /{' '}
+          <span className='font-semibold '>{property.location?.city}</span>
         </div>
-        <h1 className="text-3xl font-bold my-5">{property.name}</h1>
-        <div className="flex justify-between items-center">
-          <span className="flex items-center ">
-            <MapPin className="w-4 h-4 mr-1 " />
-            {property.location?.city}, {property.location?.state},{" "}
+        <h1 className='text-3xl font-bold my-5'>{property.name}</h1>
+        <div className='flex justify-between items-center'>
+          <span className='flex items-center '>
+            <MapPin className='w-4 h-4 mr-1 ' />
+            {property.location?.city}, {property.location?.state},{' '}
             {property.location?.country}
           </span>
-          <div className="flex justify-between items-center gap-3">
-            <span className="flex items-center text-yellow-500">
-              <Star className="w-4 h-4 mr-1 fill-current" />
-              {property.averageRating.toFixed(1)} ({property.numberOfReviews}{" "}
+          <div className='flex justify-between items-center gap-3'>
+            <span className='flex items-center text-yellow-500'>
+              <Star className='w-4 h-4 mr-1 fill-current' />
+              {property.averageRating.toFixed(1)} ({property.numberOfReviews}{' '}
               Reviews)
             </span>
-            <span className="text-green-600">Verified Listing</span>
+            <span className='text-green-600'>Verified Listing</span>
           </div>
         </div>
       </div>
 
       {/* Details */}
-      <div className="border border-primary-200 rounded-xl p-6 mb-6">
-        <div className="flex justify-between items-center gap-4 px-5">
+      <div className='border border-primary-200 rounded-xl p-6 mb-6'>
+        <div className='flex justify-between items-center gap-4 px-5'>
           <div>
-            <div className="text-sm ">Monthly Rent</div>
-            <div className="font-semibold">
+            <div className='text-sm '>Monthly Rent</div>
+            <div className='font-semibold'>
               ${property.pricePerMonth.toLocaleString()}
             </div>
           </div>
-          <div className="border-l border-gray-300 h-10"></div>
+          <div className='border-l border-gray-300 h-10'></div>
           <div>
-            <div className="text-sm ">Bedrooms</div>
-            <div className="font-semibold">{property.beds} bd</div>
+            <div className='text-sm '>Bedrooms</div>
+            <div className='font-semibold'>{property.beds} bd</div>
           </div>
-          <div className="border-l border-gray-300 h-10"></div>
+          <div className='border-l border-gray-300 h-10'></div>
           <div>
-            <div className="text-sm ">Bathrooms</div>
-            <div className="font-semibold">{property.baths} bath</div>
+            <div className='text-sm '>Bathrooms</div>
+            <div className='font-semibold'>{property.baths} bath</div>
           </div>
-          <div className="border-l border-gray-300 h-10"></div>
+          <div className='border-l border-gray-300 h-10'></div>
           <div>
-            <div className="text-sm ">Square Feet</div>
-            <div className="font-semibold">
+            <div className='text-sm '>Square Feet</div>
+            <div className='font-semibold'>
               {property.squareFeet.toLocaleString()} sq ft
             </div>
           </div>
@@ -72,9 +66,9 @@ const PropertyOverview = ({ propertyId }: PropertyOverviewProps) => {
       </div>
 
       {/* Summary */}
-      <div className="my-16">
-        <h2 className="text-xl font-semibold mb-5">About {property.name}</h2>
-        <p className=" leading-7">
+      <div className='my-16'>
+        <h2 className='text-xl font-semibold mb-5'>About {property.name}</h2>
+        <p className=' leading-7'>
           {property.description}
           Experience resort style luxury living at Seacrest Homes, where the
           ocean and city are seamlessly intertwined. Our newly built community
@@ -104,7 +98,7 @@ const PropertyOverview = ({ propertyId }: PropertyOverviewProps) => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PropertyOverview;
+export default PropertyOverview

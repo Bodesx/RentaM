@@ -4,7 +4,7 @@ import { Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const ContactWidget = ({ onOpenModal }: ContactWidgetProps) => {
+const ContactWidget = ({ onOpenModal, }: ContactWidgetProps) => {
   const { data: authUser } = useGetAuthUserQuery();
   const router = useRouter();
 
@@ -24,9 +24,9 @@ const ContactWidget = ({ onOpenModal }: ContactWidgetProps) => {
           <Phone className="text-primary-50" size={15} />
         </div>
         <div>
-          <p>Contact This Property</p>
-          <div className="text-lg font-bold ">
-            (424) 340-5574
+          <p>Contact Support</p>
+          <div className="text-lg font-bold "> 
+            08039122080
           </div>
         </div>
       </div>

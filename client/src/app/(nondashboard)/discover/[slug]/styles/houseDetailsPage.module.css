@@ -1,0 +1,124 @@
+.first_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.first_section .first{
+    position: relative;
+    width: 70vw;
+    overflow-x: hidden;
+}
+
+.first_section .first .slider{
+    position: relative;
+    width: 300vw;
+    left: 0;
+    display: flex;
+    /* transition: all 0.7s; */
+}
+
+.first_section .first .slider img{
+    height: 70vh;
+    width: 70vw;
+    object-fit: cover;
+}
+
+.prev,
+.next {
+    position: absolute;
+    cursor: pointer;
+    top: 55%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.prev{
+    left: 0;
+}
+
+.next {
+    right: 20px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.first_section .extra_info h3{
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 5px;
+}
+
+.first_section .extra_info .additional_images{
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 150px;
+    grid-auto-flow: dense;
+    padding: 1px 0 15px 0;
+}
+
+.first_section .extra_info .additional_images .additional_image{
+    position: relative;
+    transition: all 0.8s;
+    cursor: pointer;
+    /* background: url(../../images/placeholder.png) no-repeat center/cover; */
+}
+
+.first_section .extra_info .additional_images .additional_image img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.first_section .extra_info .additional_images .additional_image:hover img{
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 2;
+    box-shadow: 0 5px 20px rgba(0,0,0, 1);
+}
+
+.inactive{
+    opacity: 0.6;
+}
+
+.order_button{
+    width: 200px;
+    padding: 8px 0;
+}
+
+@media(max-width: 700px){
+    .first_section .first{
+        width: 100vw;
+    }
+
+    .first_section .first .slider{
+        width: 100vw;
+    }
+
+    .first_section .first .slider img{
+        height: 50vh;
+        width: 100vw;
+    }
+
+    .first_section .extra_info .additional_images{
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-auto-rows: 150px;
+    }
+}
+
