@@ -102,13 +102,13 @@
     padding: 8px 0;
 }
 
-@media(max-width: 700px){
+@media(max-width: 300px){
     .first_section .first{
         width: 100vw;
     }
 
     .first_section .first .slider{
-        width: 100vw;
+        width: 1000vw;
     }
 
     .first_section .first .slider img{
@@ -121,4 +121,5 @@
         grid-auto-rows: 150px;
     }
 }
+
 
