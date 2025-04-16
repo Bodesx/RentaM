@@ -3,26 +3,30 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    object-fit: cover;
 }
 
 .first_section .first{
     position: relative;
-    width: 70vw;
+    width: 100vw;
     overflow-x: hidden;
+    object-fit: cover;
 }
 
 .first_section .first .slider{
     position: relative;
     width: 300vw;
-    left: 0;
+    left: 100%;
     display: flex;
     /* transition: all 0.7s; */
 }
 
 .first_section .first .slider img{
-    height: 70vh;
+    height: 50vh;
     width: 70vw;
     object-fit: cover;
+    overflow-x: hidden;
+    flex-shrink: 0;
 }
 
 .prev,

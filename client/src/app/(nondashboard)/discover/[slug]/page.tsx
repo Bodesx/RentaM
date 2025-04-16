@@ -13,6 +13,19 @@ import * as React from 'react';
 import { Phone } from "lucide-react";
 import PopWrapper from "./components/popup";
 import HeroVideoDialogDemo from "./components/videoff";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import {
+    FaBath,
+    FaBed,
+    FaChair,
+    FaMapMarkerAlt,
+    FaParking,
+  } from 'react-icons/fa';
 
 
 
@@ -119,9 +132,9 @@ export default function HouseDetailsPage({ params }: { params: Promise<{ slug: s
         notFound();
     } else {
         return (
-            <main>
+             <main className='p-3 flex flex-col max-w-4xl mx-auto min-h-screen'>
 
- <div className={`${styles.first_section} first_section`}>
+ <div className={`${styles.first_section} first_section `}>
                     <div className={styles.first}>
                         
                         <div className={styles.slider} ref={sliderRef}>
@@ -135,7 +148,7 @@ export default function HouseDetailsPage({ params }: { params: Promise<{ slug: s
                                         src={image}
                                         alt="Placeholder Image"
                                         placeholder="blur"
-                                        quality={100}
+                                        quality={100}                                     
                                     />
                                     </div>
                                 ))
@@ -143,7 +156,7 @@ export default function HouseDetailsPage({ params }: { params: Promise<{ slug: s
                             
                         </div>
                       <div style={{ textAlign: "center", margin: "20px" }}>
-<HeroVideoDialogDemo/>
+
                     </div>
                         <a className={styles.prev}
                             onClick={()=>{
@@ -158,20 +171,52 @@ export default function HouseDetailsPage({ params }: { params: Promise<{ slug: s
                         >&#10095;
                         </a> 
                     </div>
-    <PopWrapper/>
-  
-   
+
+                   
     
        <div className={`${styles.extra_info} extra_info`}>
-        
-                      <h3>{featuredHomes[propertyIndex.current].specification}</h3>
+                            <div className="pb-9">
+ <HeroVideoDialogDemo/>
+                    </div>
+                       <ul className='text-green-200 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
+                <li className='flex items-center gap-1 whitespace-nowrap '>
+                  <FaBed className='text-lg' />
+                 <span className='text-lg'>{featuredHomes[propertyIndex.current].bed}</span>
+                </li>
+                <li className='flex items-center gap-1 whitespace-nowrap '>
+                  <FaBath className='text-lg' />
+                  <span className='text-lg'>{featuredHomes[propertyIndex.current].bath}</span>
+                </li>
+                <li className='flex items-center gap-1 whitespace-nowrap '>
+                  <FaParking className='text-lg' />
+                  <span className='text-lg'>{featuredHomes[propertyIndex.current].pool}</span>
+                </li>
+                <li className='flex items-center gap-1 whitespace-nowrap '>
+                  <FaChair className='text-lg' />
+                  <span className='text-lg'>{featuredHomes[propertyIndex.current].furnished}</span>
+                </li>
+                   <li className='flex items-center gap-1 whitespace-nowrap '>
+                 <PopWrapper />
+                </li>
+              </ul>
+        <h3 className=" justify-items-center pb-9">{featuredHomes[propertyIndex.current].description}</h3>
                   </div>
-                    <p style={{ textAlign: "center", margin: "10px" }}>
-                        <FontAwesomeIcon icon={faLocationDot} /> {featuredHomes[propertyIndex.current].address}
-                    </p>
-  
+
+   <Tabs  defaultValue="model" className="">
+  <TabsList>
+    <TabsTrigger value="size">Size</TabsTrigger>
+    <TabsTrigger value="specification">Specification</TabsTrigger> 
+    <TabsTrigger value="Address">Address</TabsTrigger>
+
+  </TabsList>
+  <TabsContent value="size">{featuredHomes[propertyIndex.current].sqft} Square Feet</TabsContent>
+  <TabsContent value="specification"> <h3>{featuredHomes[propertyIndex.current].specification}</h3></TabsContent> 
+    <TabsContent value="Address"> <p style={{ textAlign: "center", margin: "10px" }}><FontAwesomeIcon icon={faLocationDot} /> {featuredHomes[propertyIndex.current].address}</p></TabsContent>   
+</Tabs>
                      
                 </div>
+
+              
                   
     
                 <QuestionsSection slug={JSON.stringify(featuredHomes[propertyIndex.current])}/>
