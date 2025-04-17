@@ -1,15 +1,15 @@
-.second_section{
+.first_section{
     display: flex;
     flex-direction: column;
 }
 
-.second_section .second{
+.first_section .first{
     position: relative;
     width: 70vw;
     overflow-x: hidden;
 }
 
-.second_section .second .slider{
+.first_section .first .slider{
     position: relative;
     width: 70vw;
     left: 0;
@@ -17,7 +17,7 @@
     /* transition: all 0.7s; */
 }
 
-.second_section .second .slider img{
+.first_section .first .slider img{
     height: 70vh;
     width: 70vw;
     object-fit: cover;
@@ -53,14 +53,14 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.second_section .extra_info h3{
+.first_section .extra_info h3{
     text-align: center;
     padding: 10px 0;
     margin-bottom: 5px;
     
 }
 
-.second_section .extra_info .additional_images{
+.first_section .extra_info .additional_images{
     display: grid;
     gap: 1px;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -69,14 +69,14 @@
     padding: 1px 0 15px 0;
 }
 
-.second_section .extra_info .additional_images .additional_image{
+.first_section .extra_info .additional_images .additional_image{
     position: relative;
     transition: all 0.8s;
     cursor: pointer;
     /* background: url(../../images/placeholder.png) no-repeat center/cover; */
 }
 
-.second_section .extra_info .additional_images .additional_image img{
+.first_section .extra_info .additional_images .additional_image img{
     position: absolute;
     object-fit: cover;
     width: 100%;
@@ -85,7 +85,7 @@
     overflow: hidden;
 }
 
-.second_section .extra_info .additional_images .additional_image:hover img{
+.first_section .extra_info .additional_images .additional_image:hover img{
     opacity: 1;
     transform: scale(1.1);
     z-index: 2;
@@ -102,20 +102,20 @@
 }
 
 @media(max-width: 700px){
-    .second_section .second{
+    .first_section .first{
         width: 100vw;
     }
 
-    .second_section .second .slider{
+    .first_section .first .slider{
         width: 100vw;
     }
 
-    .second_section .second .slider img{
+    .first_section .first .slider img{
         height: 50vh;
         width: 100vw;
     }
 
-    .second_section .extra_info .additional_images{
+    .first_section .extra_info .additional_images{
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         grid-auto-rows: 150px;
     }

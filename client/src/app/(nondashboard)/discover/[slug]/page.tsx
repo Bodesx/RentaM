@@ -155,7 +155,7 @@ export default function HouseDetailsPage({ params }: { params: Promise<{ slug: s
                             }
                             
                         </div>
-                      <div style={{ textAlign: "center", margin: "20px" }}>
+                      <div style={{ textAlign: "center", margin: "" }}>
 
                     </div>
                         <a className={styles.prev}
