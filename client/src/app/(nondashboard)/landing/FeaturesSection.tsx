@@ -42,10 +42,10 @@ const FeaturesSection = () => {
           {[0, 1, 2].map((index) => (
             <motion.div key={index} variants={itemVariants}>
               <FeatureCard
-                imageSrc={`/landing-search${3 - index}.png`}
+                imageSrc={`/landing-search${3 - index}.gif`}
                 title={
                   [
-                    "Trustworthy and Verified Listings",
+                    "Trustworthy and Verified Listings", 
                     "Browse Rental Listings with Ease",
                     "looking to buy a new house",
                   ][index]
